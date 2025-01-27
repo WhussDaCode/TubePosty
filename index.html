@@ -3,18 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Mon Application</title>
+    <title>TubePosty - Démo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FE2C55;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #D32F2F;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur Mon Application</h1>
-    <p>Ceci est l'application qui vous permet de poster des vidéos sur YouTube facilement et rapidement.</p>
+    <h1>Bienvenue sur TubePosty</h1>
+    <p>Simulez une connexion avec TikTok et téléversez une vidéo !</p>
 
-    <!-- Liens vers les conditions et la politique de confidentialité -->
-    <footer style="margin-top: 20px; font-size: 0.9em; text-align: center;">
-        <p>
-            <a href="conditions.html" style="text-decoration: none; color: #0000EE;">Conditions d'utilisation</a> |
-            <a href="confidentialite.html" style="text-decoration: none; color: #0000EE;">Politique de confidentialité</a>
-        </p>
-    </footer>
+    <!-- Bouton de connexion -->
+    <button onclick="simulateLogin()">Se connecter avec TikTok</button>
+
+    <!-- Section de téléversement -->
+    <div id="uploadSection" style="display: none; margin-top: 20px;">
+        <h2>Téléversez une vidéo</h2>
+        <input type="file" accept="video/*" />
+        <button onclick="simulateUpload()">Téléverser</button>
+    </div>
+
+    <!-- Message de succès -->
+    <div id="successMessage" style="display: none; margin-top: 20px; color: green;">
+        <h2>Succès ! 🎉</h2>
+        <p>Votre vidéo a été publiée sur TikTok (simulation).</p>
+    </div>
+
+    <script>
+        function simulateLogin() {
+            alert('Connexion simulée avec TikTok.');
+            document.getElementById('uploadSection').style.display = 'block';
+        }
+
+        function simulateUpload() {
+            alert('Téléversement en cours (simulation)...');
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'block';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
